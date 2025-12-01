@@ -14,31 +14,8 @@
         }
     </style>
 </head>
-<!-- Simple Login Screen -->
-
-
 <body class="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 p-4 flex items-center justify-center">
-	<!-- Simple Login Screen -->
-	<div id="loginScreen" class="min-h-screen flex items-center justify-center bg-gray-200 p-4">
-	    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md border border-gray-300">
-	        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Login</h2>
-
-	        <label class="block text-gray-700 text-sm font-semibold mb-2">Username</label>
-	        <input id="loginUsername" type="text"
-	               class="w-full mb-4 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500">
-
-	        <label class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
-	        <input id="loginPassword" type="password"
-	               class="w-full mb-6 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500">
-
-	        <button id="loginBtn"
-	                class="w-full px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition">
-	            Login
-	        </button>
-	    </div>
-	</div>
-
-	    <div id="mainApp" class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-4xl border border-gray-200" hidden>
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-4xl border border-gray-200">
         <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">
             Your Personal Travel Agent ✈️
         </h1>
@@ -144,31 +121,6 @@
     </div>
 
     <script>
-		// GLOBAL login variables accessible everywhere
-		let username = "";
-		let password = "";
-
-		// Handle login
-		const loginBtn = document.getElementById('loginBtn');
-		loginBtn.addEventListener('click', () => {
-		    const user = document.getElementById('loginUsername').value.trim();
-		    const pass = document.getElementById('loginPassword').value.trim();
-
-		    if (!user || !pass) {
-		        alert("Please enter both fields.");
-		        return;
-		    }
-
-		    username = user;
-		    password = pass;
-
-		    window.loginDataJSON = JSON.stringify({ username, password });
-
-		    // Hide login, show main UI
-		    document.getElementById('loginScreen').classList.add('hidden');
-		    document.getElementById('mainApp').hidden = false;
-		});
-
         // Get references to HTML elements
         const destinationInput = document.getElementById('destination');
         const datesInput = document.getElementById('dates');
